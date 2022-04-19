@@ -1,0 +1,15 @@
+body{
+	text-align: center;
+}
+h1{
+	font-family: "Noto Sans KR";
+	margin-top: 200px;
+}
+.highlight{
+	color: rgb(63 81 181);
+}
+hr{
+	width: 500px;
+	border: none;
+	border: 1px solid rgb(63 81 181);
+}

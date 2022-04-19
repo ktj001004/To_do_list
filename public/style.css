@@ -1,0 +1,50 @@
+body {
+	font-family: "Noto Sans KR";
+	margin: 0px;
+	height: 100vh;
+	background-size : cover;
+	text-align: center;
+	color: rgb(255 200 176);
+}
+p {
+	margin: 0px;
+}
+#DATE {
+	font-size: 50px;
+}
+#TIME {
+	font-size: 90px;
+}
+li {
+	font-size: 35px;
+}
+#ADD {
+	width: 800px;
+	height: 60px;
+	background-color: transparent;
+	border: none;
+	padding-bottom: 10px;
+	border-bottom: 5px solid rgb(255 200 176);
+	color: rgb(255 200 176);
+	font-family: "Noto Sans KR";
+	font-size: 40px;
+	text-align: center;
+}
+input::placeholder {
+	color: var(--c, white);
+	font-family: "Noto Sans KR";
+	font-size: 40px;
+	text-align: center;
+}
+input:focus { outline: none; }
+
+#LIST_BOX{
+	margin-left: auto;
+	margin-right: auto;
+	overflow: scroll;
+	height: 300px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}

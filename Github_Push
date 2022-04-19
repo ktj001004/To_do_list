@@ -1,0 +1,12 @@
+git init
+git add -A
+git commit -m "TaeJeong"
+git push -f origin
+ 
+ 
+(초기화 되었을 때)
+git init
+git add -A
+git commit -m "TaeJeong"
+git remote add origin https://github.com/ktj001004/To_do_list
+git push --set-upstream origin master
