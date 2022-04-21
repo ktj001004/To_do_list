@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+	font-size: 3vw;
 }
 h1{
 	font-family: "Noto Sans KR";
@@ -18,8 +19,6 @@ div{
 	margin-right: 15px;
 }
 #logo{
-	height: 60px;
-	float: left;
 }
 .navbar_button{
 	height: 36px;

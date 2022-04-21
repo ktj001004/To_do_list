@@ -69,15 +69,20 @@
 		}
 
 		let items = [];
+		let item_html = "";
 		function add() {
-			let item_html = "";
 			let item = document.getElementById('ADD').value;
 			if(item != "" & item.length < 21){
 				items.push(item);
 				for (i = 0; i < items.length; i++) {
-					item_html = `<li id="li_${i}">${items[i]}</li>` + item_html;
+					if (localStorage.getItem(i) == null){
+						localStorage.setItem(i, `<li id="li_${i}">${items[i]}</li>`);
+						const a = localStorage.getItem(i);
+						const b = document.getElementById("LIST").innerHTML;
+						document.getElementById("LIST").innerHTML = a+b;
+						console.log(items);
+					}
 				}
-				document.getElementById('LIST').innerHTML = item_html;
 				document.getElementById('ADD').value = "";
 			} else {
 				alert("한 글자 이상, 20글자 이하의 값을 입력해주세요!");
@@ -89,14 +94,16 @@
 			clock();
 			setInterval(clock, 1000);
 			document.getElementById('ADD').focus();
+			for (i = 0; i < localStorage.length; i++) {
+				items.push(localStorage.getItem(i));
+				const a = localStorage.getItem(i);
+				const b = document.getElementById("LIST").innerHTML;
+				document.getElementById("LIST").innerHTML = a+b;
+			}
+			console.log(items);
 		}
 
 		init();
-
-		function opacity(){
-			id = `"li_${items.length-1}"`;
-			console.log(id, document.getElementById(id));
-		}
 		</script>
 	</body>
 </html>
