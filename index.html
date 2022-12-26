@@ -1,109 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" dir="ltr">
 	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<title>Tadlis</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	
-	<body id="BG">
-		<br><br><br>
-		<p id="DATE"></p>
-		<p id="TIME"></p>
-		
-		<br><br><br>
-		<input type="text" id="ADD" autocomplete="off" placeholder="오늘의 할 일을 적어주세요!" onkeyup="if(window.event.keyCode==13){add();}">
-		<br><br><br>
-		<div id="LIST_BOX">
-			<ui id="LIST"></ui>
+
+	<body>
+		<div id="top">
+			<h1>Tadlis</h1>
 		</div>
-		
-		<script>
-			const getRandom = () => {
-			const IMG_NUM = 8;
-			let num = Math.floor(Math.random() * IMG_NUM) + 1;
-			body_content = document.getElementById('BG').innerHTML;
-			document.getElementById('BG').innerHTML = `<style>body{background-image: url(bg/img_${num}.jpg);}</style>` + body_content;
-			if (num == 1){color('#FED5BB');}
-			if (num == 2){color('#140B05');}
-			if (num == 3){color('#FEDEB1');}
-			if (num == 4){color('#082C47');}
-			if (num == 5){color('#FD9C00');}
-			if (num == 6){color('#FFFFFF');}
-			if (num == 7){color('#E1D4DB');}
-			if (num == 8){color('#2D4A37');}
-		}
-		getRandom();
-
-		function color(value){
-			document.getElementById('BG').style.color = value;
-			document.getElementById('ADD').style.color = value;
-			document.getElementById('ADD').style.borderBottom = `5px solid ${value}`;
-			document.querySelector('input[type=text]').style.setProperty("--c", value);
-		}
-
-		function clock(){
-			const today = new Date();
-			const yyyy = today.getFullYear();
-			let mm = today.getMonth() + 1;
-			let dd = today.getDate();
-			let hours = today.getHours();
-			let minutes = today.getMinutes();
-
-			if (dd < 10) dd = '0' + dd;
-			if (mm < 10) mm = '0' + mm;
-			if (hours < 10) hours = '0' + hours;
-			if (minutes < 10) minutes = '0' + minutes;
-
-
-			const date = yyyy + " - " + mm + " - " + dd;
-			const time = hours + ' : ' + minutes;
-
-			document.getElementById('DATE').innerHTML = date;
-			document.getElementById('TIME').innerHTML = time;
-
-			if(document.getElementById('LIST').scrollHeight > document.body.scrollHeight){
-				document.getElementById('LIST').scrollHeight = document.body.scrollHeight;
-			}
-		}
-
-		let items = [];
-		let item_html = "";
-		function add() {
-			let item = document.getElementById('ADD').value;
-			if(item != "" & item.length < 21){
-				items.push(item);
-				for (i = 0; i < items.length; i++) {
-					if (localStorage.getItem(i) == null){
-						localStorage.setItem(i, `<li id="li_${i}">${items[i]}</li>`);
-						const a = localStorage.getItem(i);
-						const b = document.getElementById("LIST").innerHTML;
-						document.getElementById("LIST").innerHTML = a+b;
-						console.log(items);
-					}
-				}
-				document.getElementById('ADD').value = "";
-			} else {
-				alert("한 글자 이상, 20글자 이하의 값을 입력해주세요!");
-				document.getElementById('ADD').value = "";
-			}
-		}
-
-		function init() {
-			clock();
-			setInterval(clock, 1000);
-			document.getElementById('ADD').focus();
-			for (i = 0; i < localStorage.length; i++) {
-				items.push(localStorage.getItem(i));
-				const a = localStorage.getItem(i);
-				const b = document.getElementById("LIST").innerHTML;
-				document.getElementById("LIST").innerHTML = a+b;
-			}
-			console.log(items);
-		}
-
-		init();
-		</script>
+		<div class="left">
+			<div id="left_top">
+				<p id="date"></p>
+			</div>
+			<div id="left_bottom"> To-do List
+				<p><input type="text" id="ADD" autocomplete="off" placeholder="오늘 할 일은 무엇인가요?" onkeyup="if(window.event.keyCode==13){add();}"></p>
+				<table id="list"><style id="checkboxstyle"></style></table>
+			<div>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>

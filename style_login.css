@@ -1,0 +1,38 @@
+body{
+	text-align: center;
+	font-size: 3vw;
+}
+h1{
+	margin: 0px;
+	color: rgb(63 85 177);
+	font-family: "Noto Sans KR";
+}
+#logo{
+	float: left;
+	width: 35vw;
+}
+#initial{
+	width: 3vw;
+	float: left;
+}
+#tadlis{
+    font-size: 2.5vw;
+    float: left;
+}
+
+hr{
+	width: 500px;
+	border: none;
+	border: 5px solid rgb(63 85 177);
+}
+div{
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
+	text-align: center;
+}
+#top_div{
+	width: 50%;
+	margin-right: auto;
+    margin-left: auto;
+}

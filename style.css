@@ -1,0 +1,39 @@
+body {
+	text-align: center;
+}
+#top{
+	width: 100%;
+	height: 100px;
+	float: left;
+}
+.icon{
+	width: 13px;
+	margin: 1px 0px 0px 1px
+}
+.li{
+	vertical-align: top;
+	text-align: left;
+}
+.left{
+	width: 200px;
+	float: left;
+}
+#left_top{
+	height: 80px;
+}
+#left_bottom{
+	height: 100%;
+}
+#list{
+	list-style-type: none;
+}
+#ADD {
+	background-color: transparent;
+	border: none;
+	padding-bottom: 0.2em;
+	border-bottom: 1px solid rgb(0 0 0);
+	text-align: center;
+}
+input::placeholder {
+}
+input:focus { outline: none; }
